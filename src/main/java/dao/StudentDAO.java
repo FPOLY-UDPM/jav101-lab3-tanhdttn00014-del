@@ -11,14 +11,8 @@ import java.util.List;
 public class StudentDAO {
     public List<Student> findAll() {
         List<Student> list = new ArrayList<>();
-        //Câu lệnh sau tùy thuộc vào bảng dữ liệu trong database
-        //Truy vấn database lấy id, masv, hoten
-        String sql = "SELECT id, masv, hoten FROM SINHVIEN";
 
-        // HOẶC
-
-        String sql = "SELECT id, masv,
-        Ho + ' ' + TenLot + ' ' + Ten as hoten FROM SINHVIEN";
+        String sql = "SELECT id, masv, Ho + ' ' + TenLot + ' ' + Ten as hoten FROM HOCSINH";
 
 
         try (Connection conn = DBConnection.getConnection();
@@ -28,7 +22,7 @@ public class StudentDAO {
             while (rs.next()) {
                 list.add(new Student(
                         rs.getInt("id"),
-                        rs.getString("masv"),
+                        rs.getString("masv").trim(),
                         rs.getString("hoten")
                 ));
             }

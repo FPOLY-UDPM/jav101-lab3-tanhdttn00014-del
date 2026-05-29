@@ -7,8 +7,8 @@ public class DBConnection {
     private static final String URL =
 
             "jdbc:sqlserver://localhost:1433;databaseName=QLSV;encrypt=false";
-    private static final String USER = "user database";
-    private static final String PASS = "password database";
+    private static final String USER = "sa";
+    private static final String PASS = "123";
 
     public static Connection getConnection() throws Exception {
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
