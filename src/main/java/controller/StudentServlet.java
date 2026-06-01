@@ -21,4 +21,5 @@ public class StudentServlet extends HttpServlet {
         List<Student> list = dao.findAll();
         req.setAttribute("students", list);
         req.getRequestDispatcher("student-list.jsp").forward(req, resp);
+    }
 }
